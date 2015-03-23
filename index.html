@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Tabs</title>
+	<link rel="stylesheet" href="css/style.css"/>
+</head>
+
+<body>
+
+<div id="app">
+	<section id="main">
+		<ul id="items-list">
+
+		</ul>
+		<ul id="add-item-container">
+			<li><a id="add-item-show-form">Add item</a></li>
+		</ul>
+
+		<ul id="add-item-form" style="display: none">
+			<li>
+				<input id="name" placeholder="Site Name"/>
+				<input id="url" placeholder="http://"/>
+				<button id="add-item">Add</button>
+			</li>
+		</ul>
+	</section>
+</div>
+
+<script src="lib/json2.js"></script>
+<script src="lib/jquery.js"></script>
+<script src="lib/underscore.js"></script>
+<script src="lib/backbone.js"></script>
+<script src="lib/backbone.localStorage.js"></script>
+<script src="js/app.js"></script>
+
+<!-- Templates -->
+
+<script type="text/template" id="item-template">
+	<div class="item">
+		<a href="<%- url %>" target="_blank"><%- name %></a>
+	</div>
+	<div class="item-edit">
+		<input class="edit name" type="text" value="<%- name %>"/>
+		<input class="edit url" type="text" value="<%- url %>"/>
+		<button class="link done">Save</button>
+		<span class="link remove"></span>
+	</div>
+</script>
+
+</body>
+</html>
